@@ -1,0 +1,338 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #003B80;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+}
+
+.cake-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.cake-hint-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cake {
+  width: 50vw;
+  cursor: pointer;
+  max-width: 250px;
+}
+
+.letter {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 80%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.letter h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 500px) {
+    .letter {
+        font-size: 1rem;
+        padding: 20px;
+    }
+}
+
+.hidden {
+  /* visibility: hidden; */
+  opacity: 0;
+}
+
+.emoji {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 1;
+  transition: all 2s ease-out;
+  pointer-events: none;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.3s; /* 可調出現時間 */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px); /* 信輕輕飄上嚟 */
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.hint-bounce {
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  animation: bounce 1.2s infinite;
+  text-align: center;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.pokeball {
+  position: fixed;
+  left: 20px;
+  top: 2%;
+  width: 80px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.purin {
+  position: fixed;
+  right: 10px;
+  top: 2%;
+  width: 100px;
+  z-index: 20;
+  transition: transform 1s ease;
+}
+
+.peppa {
+  position: fixed;
+  right: 20px;
+  bottom: 5%;
+  width: 80px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.fade-in-soft {
+  opacity: 0;
+  animation: fadeInSoft 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInSoft {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fly-left {
+  animation: flyToBall 1.5s forwards;
+}
+
+@keyframes flyToBall {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-220px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+.fly-back {
+  animation: flyBack 1.5s forwards;
+}
+
+@keyframes flyBack {
+  0% {
+    transform: translateX(-220px) scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.bounce {
+  animation: bounceUpDown 1s infinite;
+}
+
+@keyframes bounceUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.shake {
+  animation: shakeBall 0.6s ease;
+}
+
+@keyframes shakeBall {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  75% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes shakePeppa {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-3px, 2px); }
+  50% { transform: translate(3px, -1px); }
+  75% { transform: translate(-2px, 2px); }
+  100% { transform: translate(0, 0); }
+}
+
+.peppa.shake {
+  animation: shakePeppa 0.4s ease;
+}
+
+.sideMe {
+  position: fixed;
+  right: 0px; /* 固定位置唔郁 */
+  bottom: 50%;
+  width: 80px;
+  z-index: 999;
+  opacity: 0;
+  transform: translateX(100%);
+  pointer-events: none;
+}
+.sideMe.animate {
+    animation: sideMeInOut 5s ease forwards;
+}
+
+@keyframes sideMeInOut {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  70% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+}
+
+.yan-kiss {
+  position: fixed;
+  width: 200px;
+  height: auto;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.yan-kiss.show {
+  opacity: 1;
+}
+
+/* ig story */
+.story-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 75vw;
+  height: 75vh;
+  background: rgb(223, 223, 223);
+  z-index: 1000;
+  display: flex; /* 始終保持 flex 讓內容居中 */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.5s ease, opacity 0.5s ease; /* 添加 opacity 過渡 */
+
+  /* 初始狀態：移動到視窗外並完全透明 */
+  transform: translate(-50%, -150%); /* 向上滑出，可以調整 -150% 為你喜歡的起始位置 */
+  opacity: 0;
+  pointer-events: none; /* 讓點擊穿透，在隱藏時不會阻擋下方內容 */
+}
+
+/* 當 modal 顯示時的狀態 */
+.story-modal.show {
+  transform: translate(-50%, -50%); /* 滑動到中心位置 */
+  opacity: 1; /* 顯示 */
+  pointer-events: auto; /* 允許點擊互動 */
+}
+
+/* 移除 .story-modal.hidden */
+/* .story-modal.hidden {
+  display: none;
+} */
+
+.story-img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.story-bar-container {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  width: 90%;
+  height: 5px;
+  gap: 5px;
+  justify-content: center;
+}
+
+.story-bar {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.story-bar-fill {
+  background: black;
+  height: 100%;
+  width: 0%;
+  transition: width 0s linear;
+}
+
+.see-here {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.see-here:hover {
+  color: #0056b3;
+}
