@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (el) el.style.animationPlayState = "running";
     });
     document.querySelectorAll(".balloon").forEach(b => {
-      b.style.display = "block";
       b.style.animationPlayState = "running";
     });
   }
