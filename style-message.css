@@ -4,7 +4,8 @@ body, html {
   height: 100%;
   background: #003B80;
   font-family: 'Poppins', sans-serif;
-  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   position: relative;
 }
 
