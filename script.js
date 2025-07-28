@@ -54,7 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const el = document.querySelector(`.${cls}`);
       if (el) el.style.animationPlayState = "running";
     });
-    document.querySelectorAll(".balloon").forEach(b => b.style.animationPlayState = "running");
+    document.querySelectorAll(".balloon").forEach(b => {
+      b.style.display = "block";
+      b.style.animationPlayState = "running";
+      b.onanimationend = () => { b.style.display = "none"; };
+    });
   }
 
   function launchConfetti() {
