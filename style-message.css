@@ -4,9 +4,16 @@ body, html {
   height: 100%;
   background: #003B80;
   font-family: 'Poppins', sans-serif;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
   position: relative;
+}
+
+.site-wrapper {
+  position: relative;
+  width: 100%;
+  overflow-y: auto;          /* 啟用垂直滑動 */
+  height: 100%;
+  -webkit-overflow-scrolling: touch; /* iOS 確保滑動慣性 */
 }
 
 .overlay {
