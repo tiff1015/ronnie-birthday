@@ -121,15 +121,15 @@
       width: 60px;
       opacity: 0;
       display: none;
-      /* animation: floatUp 8s ease-in forwards; */
-      /* -webkit-animation: floatUp 8s ease-in forwards;*/ 
-    }
-
-    .balloon.float {
-      display: block;
       animation: floatUp 8s ease-in forwards;
       -webkit-animation: floatUp 8s ease-in forwards;
     }
+
+    /* .balloon.float {
+      display: block;
+      animation: floatUp 8s ease-in forwards;
+      -webkit-animation: floatUp 8s ease-in forwards;
+    } */
 
     .balloon1 { left: 10%; animation-delay: 8s; }
     .balloon2 { left: 20%; animation-delay: 4s; }
@@ -247,11 +247,11 @@
       100% { bottom: 90%; opacity: 0; }
     }
 
-    @-webkit-keyframes floatUp {
+    /* @-webkit-keyframes floatUp {
       0% { bottom: -100px; opacity: 0; }
       1% { opacity: 1; }
       100% { bottom: 90%; opacity: 0; }
-    }
+    }*/ 
 
     @keyframes bounce {
       0%, 100% { transform: translateY(0) rotate(-10deg); }
