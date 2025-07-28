@@ -56,7 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.querySelectorAll(".balloon").forEach(b => {
       b.style.display = "block";
-      b.style.animationPlayState = "running";
+      b.classList.remove("float"); // 先remove
+      void b.offsetWidth; // 強制reflow
+      b.classList.add("float"); // 再add返
       b.onanimationend = () => { b.style.display = "none"; };
     });
   }
