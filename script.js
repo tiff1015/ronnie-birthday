@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function launchConfetti() {
-    const duration = 5000;
+    const duration = 8000;
     const end = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
     const interval = setInterval(() => {
