@@ -50,6 +50,7 @@ body, html {
   left: 50%;
   width: 80%;
   max-width: 600px;
+  max-height: 60vh;
   background: rgba(255, 255, 255, 0.15);
   color: white;
   padding: 30px;
@@ -57,6 +58,7 @@ body, html {
   font-size: 1.2rem;
   z-index: 10;
   backdrop-filter: blur(10px);
+  overflow-y: auto;
 }
 
 .letter h2 {
