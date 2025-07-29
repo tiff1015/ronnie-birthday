@@ -141,7 +141,7 @@ body, html {
   right: 20px;
   bottom: 5%;
   width: 80px;
-  z-index: 20;
+  z-index: 5;
   cursor: pointer;
 }
 
