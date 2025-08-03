@@ -43,9 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
       letter.classList.add("fade-in");
 
       // 💡 彈出 SideMe
-      //setTimeout(() => {
+      setTimeout(() => {
         //showSideMeSlide();
-      //}, 15000); // 只播一次，15秒後
+      }, 15000); // 只播一次，15秒後
 
       // 顯示 pokeball 同 波波球 同 Peppa
       pokeball.classList.remove("hidden");
@@ -177,10 +177,10 @@ peppa.addEventListener("click", () => {
   //const peppaRect = peppa.getBoundingClientRect();
 
   // 2. 擺 yan-kiss 起始位置（同 peppa 對齊）
-  //yanKiss.style.left = `${peppaRect.left + peppaRect.width / 2}px`;
-  //yanKiss.style.top = `${peppaRect.top + peppaRect.height / 2}px`;
-  //yanKiss.style.transform = `translate(-50%, -50%) scale(0.3)`;
-  //yanKiss.classList.remove("hidden");
+  yanKiss.style.left = `${peppaRect.left + peppaRect.width / 2}px`;
+  yanKiss.style.top = `${peppaRect.top + peppaRect.height / 2}px`;
+  yanKiss.style.transform = `translate(-50%, -50%) scale(0.3)`;
+  yanKiss.classList.remove("hidden");
 
   // 3. 播歌
   yanHb.currentTime = 0;
