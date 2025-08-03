@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 💡 彈出 SideMe
       setTimeout(() => {
-        //showSideMeSlide();
+        showSideMeSlide();
       }, 15000); // 只播一次，15秒後
 
       // 顯示 pokeball 同 波波球 同 Peppa
@@ -174,7 +174,7 @@ peppa.addEventListener("click", () => {
   if (yanKiss.classList.contains("show")) return;
 
   // 1. 計算 peppa 嘅位置
-  //const peppaRect = peppa.getBoundingClientRect();
+  const peppaRect = peppa.getBoundingClientRect();
 
   // 2. 擺 yan-kiss 起始位置（同 peppa 對齊）
   yanKiss.style.left = `${peppaRect.left + peppaRect.width / 2}px`;
@@ -188,25 +188,25 @@ peppa.addEventListener("click", () => {
 
   // 4. 小 delay 觸發飛出動畫
   //requestAnimationFrame(() => {
-    //yanKiss.classList.add("show");
-    //yanKiss.style.left = `50%`;
-    //yanKiss.style.top = `50%`;
-    //yanKiss.style.transform = `translate(-50%, -50%) scale(1)`;
+    yanKiss.classList.add("show");
+    yanKiss.style.left = `50%`;
+    yanKiss.style.top = `50%`;
+    yanKiss.style.transform = `translate(-50%, -50%) scale(1)`;
   //});
 
   // 5. 播完退場
-  //yanHb.addEventListener("ended", () => {
+  yanHb.addEventListener("ended", () => {
     // 飛返入 peppa
-    //yanKiss.style.left = `${peppaRect.left + peppaRect.width / 2}px`;
-    //yanKiss.style.top = `${peppaRect.top + peppaRect.height / 2}px`;
-    //yanKiss.style.transform = `translate(-50%, -50%) scale(0.3)`;
+    yanKiss.style.left = `${peppaRect.left + peppaRect.width / 2}px`;
+    yanKiss.style.top = `${peppaRect.top + peppaRect.height / 2}px`;
+    yanKiss.style.transform = `translate(-50%, -50%) scale(0.3)`;
 
     // 完成退場再 hide
-    //setTimeout(() => {
+    setTimeout(() => {
       yanKiss.classList.remove("show");
       yanKiss.classList.add("hidden");
-    //}, 600);
-  //}, { once: true });
+    }, 600);
+  }, { once: true });
 });
 
 // ig story
