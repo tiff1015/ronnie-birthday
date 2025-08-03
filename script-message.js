@@ -171,7 +171,7 @@ const yanKiss = document.getElementById("yanKiss");
 const yanHb = document.getElementById("yanHb");
 
 peppa.addEventListener("click", () => {
-  if (yanKiss.classList.contains("show")) return;
+  // if (yanKiss.classList.contains("show")) return;
 
   // 1. 計算 peppa 嘅位置
   const peppaRect = peppa.getBoundingClientRect();
@@ -182,6 +182,13 @@ peppa.addEventListener("click", () => {
   yanKiss.style.transform = `translate(-50%, -50%) scale(0.3)`;
   yanKiss.classList.remove("hidden");
 
+  // *** 核心修復：重新載入 GIF ***
+  // 為了確保 GIF 每次都重新播放，可以先將 src 設為空字串，再重新設回原來的 src。
+  // 或者直接重新設定 src 到它自己，瀏覽器會強制重新載入。
+  const originalGifSrc = yanKiss.src; // 儲存原始 src
+  yanKiss.src = ""; // 清空 src
+  yanKiss.src = originalGifSrc; // 重新設定 src，強制瀏覽器重新載入 GIF
+  
   // 3. 播歌
   yanHb.currentTime = 0;
   yanHb.play();
