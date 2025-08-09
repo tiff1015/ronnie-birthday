@@ -224,7 +224,7 @@ const storyBarContainer = document.getElementById("storyBarContainer");
 
 // 你張圖陣列
 const storyImages = [
-  "assets/story1.jpeg",
+  "assets/story1.jpg",
   "assets/story2.jpeg",
 ];
 
